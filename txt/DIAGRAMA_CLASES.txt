@@ -1,0 +1,309 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           DIAGRAMA DE CLASES - SISTEMA DE GESTIÓN DE INVENTARIO           ║
+║                            AgroCol SAS                                     ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                             CAPA DE MODELO                               │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+╔═══════════════════════════════════╗
+║          Proveedor                ║
+╠═══════════════════════════════════╣
+║ Atributos:                        ║
+║ - _id_proveedor: str              ║
+║ - _nombre: str                    ║
+║ - _telefono: str                  ║
+║ - _email: str                     ║
+╠═══════════════════════════════════╣
+║ Métodos:                          ║
+║ + __init__(id, nombre, ...)       ║
+║ + @property id_proveedor()        ║
+║ + @property nombre()              ║
+║ + @property telefono()            ║
+║ + @property email()               ║
+║ + @nombre.setter(valor)           ║
+║ + @telefono.setter(valor)         ║
+║ + @email.setter(valor)            ║
+║ + to_dict(): dict                 ║
+║ + from_dict(data): Proveedor      ║
+║ + __str__(): str                  ║
+╚═══════════════════════════════════╝
+           │
+           │ (1)
+           │
+           │ es proveedor de
+           │
+           ▼ (0..*)
+╔═══════════════════════════════════╗
+║            Producto               ║
+╠═══════════════════════════════════╣
+║ Atributos:                        ║
+║ - _codigo: str                    ║
+║ - _nombre: str                    ║
+║ - _unidad_medida: str             ║
+║ - _fecha_ingreso: str             ║
+║ - _proveedor: Proveedor           ║
+║ - _precio_costo: float            ║
+║ - _cantidad: float                ║
+║ - _stock_minimo: float            ║
+╠═══════════════════════════════════╣
+║ Métodos:                          ║
+║ + __init__(codigo, nombre, ...)   ║
+║ + @property codigo()              ║
+║ + @property nombre()              ║
+║ + @property unidad_medida()       ║
+║ + @property fecha_ingreso()       ║
+║ + @property proveedor()           ║
+║ + @property precio_costo()        ║
+║ + @property cantidad()            ║
+║ + @property stock_minimo()        ║
+║ + @nombre.setter(valor)           ║
+║ + @precio_costo.setter(valor)     ║
+║ + @cantidad.setter(valor)         ║
+║ + @stock_minimo.setter(valor)     ║
+║ + agregar_stock(cantidad): void   ║
+║ + retirar_stock(cantidad): void   ║
+║ + esta_bajo_stock(): bool         ║
+║ + valor_total_inventario(): float ║
+║ + to_dict(): dict                 ║
+║ + from_dict(data): Producto       ║
+║ + __str__(): str                  ║
+╚═══════════════════════════════════╝
+           │
+           │ (*)
+           │
+           │ pertenece a
+           │
+           ▼ (1)
+╔═══════════════════════════════════╗
+║          Inventario               ║
+╠═══════════════════════════════════╣
+║ Atributos:                        ║
+║ - _productos: dict[str, Producto] ║
+║ - _proveedores: dict[str, Prov]   ║
+╠═══════════════════════════════════╣
+║ Métodos:                          ║
+║ + __init__()                      ║
+║                                   ║
+║ GESTIÓN DE PROVEEDORES:           ║
+║ + agregar_proveedor(p): void      ║
+║ + obtener_proveedor(id): Prov     ║
+║ + listar_proveedores(): list      ║
+║                                   ║
+║ GESTIÓN DE PRODUCTOS:             ║
+║ + agregar_producto(p): void       ║
+║ + obtener_producto(cod): Producto ║
+║ + actualizar_producto(p): void    ║
+║ + eliminar_producto(cod): void    ║
+║ + listar_productos(): list        ║
+║                                   ║
+║ BÚSQUEDAS Y CONSULTAS:            ║
+║ + buscar_productos(term): list    ║
+║ + obtener_productos_bajo_stock(): ║
+║   list                            ║
+║ + obtener_productos_por_proveed   ║
+║   or(id): list                    ║
+║                                   ║
+║ ESTADÍSTICAS:                     ║
+║ + obtener_cantidad_total_prod():  ║
+║   int                             ║
+║ + obtener_valor_total_inv():      ║
+║   float                           ║
+║                                   ║
+║ SERIALIZACIÓN:                    ║
+║ + to_dict(): dict                 ║
+║ + from_dict(data): Inventario     ║
+╚═══════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        CAPA DE PERSISTENCIA                              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+╔═══════════════════════════════════╗
+║      GestorPersistencia           ║
+╠═══════════════════════════════════╣
+║ Atributos:                        ║
+║ - _archivo: str                   ║
+║ - _ruta_completa: str             ║
+╠═══════════════════════════════════╣
+║ Métodos:                          ║
+║ + __init__(archivo)               ║
+║ + @property archivo()             ║
+║ + @property ruta_completa()       ║
+║ + guardar_inventario(inv): bool   ║
+║ + cargar_inventario(): Inventario ║
+║ + existe_archivo(): bool          ║
+║ + crear_backup(sufijo): bool      ║
+║ + eliminar_archivo(): bool        ║
+╚═══════════════════════════════════╝
+           │
+           │ persiste
+           │
+           ▼
+╔═══════════════════════════════════╗
+║    inventario_agrocol.json        ║
+║ --------------------------------- ║
+║ {                                 ║
+║   "productos": [...],             ║
+║   "proveedores": [...]            ║
+║ }                                 ║
+╚═══════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      CAPA DE PRESENTACIÓN (GUI)                          │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+╔═══════════════════════════════════╗
+║       VentanaPrincipal            ║
+╠═══════════════════════════════════╣
+║ Atributos:                        ║
+║ - root: tk.Tk                     ║
+║ - gestor_persistencia             ║
+║ - inventario: Inventario          ║
+║ - tabla_productos: Treeview       ║
+║ - entry_busqueda: Entry           ║
+║ - labels de estadísticas          ║
+╠═══════════════════════════════════╣
+║ Métodos:                          ║
+║ + __init__(root)                  ║
+║ + configurar_estilo()             ║
+║ + crear_menu()                    ║
+║ + crear_interfaz()                ║
+║ + actualizar_tabla_productos()    ║
+║ + actualizar_estadisticas()       ║
+║ + buscar_productos()              ║
+║ + abrir_ventana_agregar_prod()    ║
+║ + modificar_producto()            ║
+║ + eliminar_producto()             ║
+║ + agregar_stock()                 ║
+║ + retirar_stock()                 ║
+║ + abrir_ventana_proveedores()     ║
+║ + mostrar_productos_bajo_stock()  ║
+║ + mostrar_resumen_inventario()    ║
+║ + mostrar_productos_por_prov()    ║
+║ + verificar_alertas_stock()       ║
+║ + guardar_inventario()            ║
+║ + crear_backup()                  ║
+║ + mostrar_acerca_de()             ║
+║ + salir()                         ║
+╚═══════════════════════════════════╝
+           │
+           │ abre
+           │
+           ├──────────────────────────┐
+           │                          │
+           ▼                          ▼
+╔════════════════════════╗  ╔════════════════════════╗
+║   VentanaProducto      ║  ║  VentanaProveedores    ║
+╠════════════════════════╣  ╠════════════════════════╣
+║ Atributos:             ║  ║ Atributos:             ║
+║ - ventana: Toplevel    ║  ║ - ventana: Toplevel    ║
+║ - ventana_principal    ║  ║ - ventana_principal    ║
+║ - producto: Producto   ║  ║ - tabla: Treeview      ║
+║ - es_nuevo: bool       ║  ╠════════════════════════╣
+║ - entries y combos     ║  ║ Métodos:               ║
+╠════════════════════════╣  ║ + crear_interfaz()     ║
+║ Métodos:               ║  ║ + actualizar_tabla()   ║
+║ + crear_interfaz()     ║  ║ + agregar_proveedor()  ║
+║ + actualizar_combo_p() ║  ║ + eliminar_proveedor() ║
+║ + agregar_proveedor()  ║  ╚════════════════════════╝
+║ + cargar_datos_prod()  ║           │
+║ + guardar()            ║           │ abre
+╚════════════════════════╝           │
+           │                         ▼
+           │ abre         ╔════════════════════════╗
+           │              ║ VentanaProveedorSimple ║
+           ▼              ╠════════════════════════╣
+╔════════════════════════╗║ Atributos:             ║
+║ VentanaProveedorSimple ║║ - ventana: Toplevel    ║
+╠════════════════════════╣║ - ventana_producto     ║
+║ (Igual que arriba)     ║║ - entries              ║
+║ Para agregar proveedor ║╠════════════════════════╣
+║ desde VentanaProducto  ║║ Métodos:               ║
+╚════════════════════════╝║ + crear_interfaz()     ║
+                          ║ + guardar()            ║
+                          ╚════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                          PUNTO DE ENTRADA                                │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+╔═══════════════════════════════════╗
+║           main.py                 ║
+╠═══════════════════════════════════╣
+║ + main(): void                    ║
+║   - Crea tk.Tk()                  ║
+║   - Crea VentanaPrincipal(root)   ║
+║   - Inicia mainloop()             ║
+╚═══════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        RELACIONES ENTRE CLASES                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+COMPOSICIÓN:
+  Inventario ◆──── Producto
+  Producto ◆──── Proveedor
+  VentanaPrincipal ◆──── GestorPersistencia
+  VentanaPrincipal ◆──── Inventario
+
+AGREGACIÓN:
+  VentanaProducto ○──── VentanaPrincipal
+  VentanaProveedores ○──── VentanaPrincipal
+  VentanaProveedorSimple ○──── VentanaProducto/VentanaProveedores
+
+DEPENDENCIA:
+  GestorPersistencia ···> Inventario (serialización)
+  VentanaPrincipal ···> Producto (visualización)
+  VentanaPrincipal ···> Proveedor (visualización)
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    PRINCIPIOS POO IMPLEMENTADOS                          │
+└─────────────────────────────────────────────────────────────────────────┘
+
+✓ ENCAPSULACIÓN
+  - Atributos privados con underscore (_atributo)
+  - Acceso mediante @property y setters
+  - Validación en setters
+
+✓ ABSTRACCIÓN
+  - Interfaces claras y métodos bien definidos
+  - Ocultación de detalles de implementación
+  - Separación de responsabilidades
+
+✓ COMPOSICIÓN
+  - Producto contiene Proveedor
+  - Inventario contiene múltiples Productos y Proveedores
+  - Relaciones has-a bien definidas
+
+✓ COHESIÓN
+  - Cada clase tiene una única responsabilidad
+  - Métodos relacionados agrupados
+  - Alta cohesión interna
+
+✓ BAJO ACOPLAMIENTO
+  - Clases independientes entre sí
+  - Comunicación mediante interfaces bien definidas
+  - Fácil mantenimiento y extensión
+
+✓ REUTILIZACIÓN
+  - Métodos to_dict() y from_dict() en todas las clases del modelo
+  - Código modular y reutilizable
+  - Separación de capas
+
+
+╔════════════════════════════════════════════════════════════════════════╗
+║                     FIN DEL DIAGRAMA DE CLASES                         ║
+║                        AgroCol SAS - Versión 1.0                       ║
+╚════════════════════════════════════════════════════════════════════════╝

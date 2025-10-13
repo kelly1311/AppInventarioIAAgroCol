@@ -1,0 +1,140 @@
+# ==================== ARCHIVO .gitignore ====================
+# Este archivo indica a Git qué archivos/carpetas NO debe incluir
+# en el control de versiones.
+
+# ==================== ARCHIVOS DE PYTHON ====================
+
+# Archivos compilados de Python (.pyc, .pyo)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuciones de Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.whl
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv
+.virtualenv
+
+# ==================== ARCHIVOS DE DATOS ====================
+
+# Archivos JSON de datos (excepto ejemplos)
+datos/*.json
+!datos/ejemplo.json
+
+# Backups del inventario
+*_backup_*.json
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+
+# Bases de datos
+*.db
+*.sqlite
+*.sqlite3
+
+# ==================== ARCHIVOS DEL IDE ====================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# ==================== ARCHIVOS DEL SISTEMA ====================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+*~
+.directory
+
+# ==================== ARCHIVOS DE LOG Y DEBUG ====================
+
+# Archivos de log
+*.log
+logs/
+*.log.*
+
+# Archivos de debug
+debug.txt
+*.debug
+
+# ==================== ARCHIVOS DE CONFIGURACIÓN LOCAL ====================
+
+# Configuraciones locales que no deben compartirse
+config.local.py
+settings.local.py
+.env
+.env.local
+
+# ==================== ARCHIVOS DE DOCUMENTACIÓN ====================
+
+# Archivos de documentación generados
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# ==================== ARCHIVOS DE TESTING ====================
+
+# Cobertura de tests
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# ==================== OTROS ====================
+
+# Archivos comprimidos (si no son necesarios)
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Archivos de Office temporales
+~$*.docx
+~$*.xlsx
+~$*.pptx

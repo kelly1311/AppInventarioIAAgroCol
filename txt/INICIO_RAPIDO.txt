@@ -1,0 +1,146 @@
+╔════════════════════════════════════════════════════════════════╗
+║  SISTEMA DE GESTIÓN DE INVENTARIO - AGROCOL SAS               ║
+║  Guía de Inicio Rápido                                        ║
+╚════════════════════════════════════════════════════════════════╝
+
+REQUISITOS PREVIOS
+==================
+✓ Python 3.7 o superior instalado
+✓ Sistema operativo: Windows, macOS o Linux
+
+
+ARCHIVOS DEL PROYECTO
+=====================
+📄 main.py              - Archivo principal de la aplicación
+📄 modelos.py           - Clases: Producto, Proveedor, Inventario
+📄 persistencia.py      - Gestión de almacenamiento en JSON
+📄 interfaz.py          - Interfaz gráfica (tkinter)
+📄 ejemplo_datos.py     - Script para crear datos de prueba
+📄 README.md            - Documentación completa
+📄 requirements.txt     - Requisitos del sistema
+
+
+OPCIÓN 1: INICIAR CON DATOS DE EJEMPLO (RECOMENDADO)
+=====================================================
+
+1. Abrir terminal en el directorio del proyecto
+
+2. Ejecutar el script de datos de ejemplo:
+   python ejemplo_datos.py
+
+3. Iniciar la aplicación:
+   python main.py
+
+
+OPCIÓN 2: INICIAR CON INVENTARIO VACÍO
+=======================================
+
+1. Abrir terminal en el directorio del proyecto
+
+2. Ejecutar directamente:
+   python main.py
+
+3. La aplicación creará automáticamente un archivo vacío
+
+
+PRIMEROS PASOS EN LA APLICACIÓN
+================================
+
+1. AGREGAR UN PROVEEDOR
+   - Ir a: Menú "Proveedores" → "Gestionar Proveedores"
+   - Clic en "Agregar Proveedor"
+   - Completar: ID, Nombre, Teléfono, Email
+   - Guardar
+
+2. AGREGAR UN PRODUCTO
+   - Clic en botón "Agregar Producto"
+   - Completar todos los campos requeridos
+   - Seleccionar un proveedor de la lista
+   - Guardar
+
+3. GESTIONAR STOCK
+   - Seleccionar un producto de la tabla
+   - Usar "Agregar Stock" para entradas
+   - Usar "Retirar Stock" para salidas
+
+
+FUNCIONALIDADES PRINCIPALES
+============================
+
+BÚSQUEDA
+- Campo de búsqueda en la parte superior
+- Filtrado automático por código o nombre
+
+ALERTAS
+- Productos bajo stock se muestran en ROJO
+- Alerta automática al iniciar si hay productos bajos
+
+REPORTES (Menú Reportes)
+- Productos Bajo Stock
+- Resumen Inventario
+- Productos por Proveedor
+
+ARCHIVO (Menú Archivo)
+- Guardar manualmente
+- Crear Backup con fecha
+- Salir (pregunta si guardar)
+
+
+ESTRUCTURA DE DATOS
+====================
+
+Los datos se guardan en:
+📁 inventario_agrocol.json
+
+Los backups se crean como:
+📁 inventario_agrocol_backup_YYYYMMDD_HHMMSS.json
+
+
+CARACTERÍSTICAS DE ORIENTACIÓN A OBJETOS
+=========================================
+
+CLASE PROVEEDOR
+- Representa proveedores de insumos
+- Atributos: ID, nombre, teléfono, email
+- Métodos: serialización, validación
+
+CLASE PRODUCTO
+- Representa productos/insumos agrícolas
+- Atributos: código, nombre, cantidad, precio, proveedor, etc.
+- Métodos: agregar_stock(), retirar_stock(), esta_bajo_stock()
+
+CLASE INVENTARIO
+- Gestiona colección de productos y proveedores
+- Métodos: CRUD completo, búsquedas, reportes, estadísticas
+
+CLASE GESTORPERSISTENCIA
+- Maneja almacenamiento en JSON
+- Métodos: guardar, cargar, backup
+
+
+SOLUCIÓN DE PROBLEMAS
+======================
+
+PROBLEMA: No inicia la aplicación
+SOLUCIÓN: Verificar versión de Python (python --version)
+          Debe ser 3.7 o superior
+
+PROBLEMA: Error al guardar datos
+SOLUCIÓN: Verificar permisos de escritura en el directorio
+
+PROBLEMA: Datos corruptos
+SOLUCIÓN: Restaurar desde backup o eliminar el JSON
+
+
+CONTACTO Y SOPORTE
+==================
+
+Para reportar problemas o sugerencias, contactar al
+administrador del sistema o revisar la documentación completa
+en README.md
+
+
+╔════════════════════════════════════════════════════════════════╗
+║  AgroCol SAS - Optimizando la gestión de inventarios          ║
+║  Versión 1.0 - Sistema sin conexión a internet                ║
+╚════════════════════════════════════════════════════════════════╝

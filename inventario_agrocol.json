@@ -1,0 +1,351 @@
+{
+    "productos": [
+        {
+            "codigo": "FERT001",
+            "nombre": "Fertilizante NPK 15-15-15",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "01/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV002",
+                "nombre": "Fertilizantes Nacionales S.A.",
+                "telefono": "3009876543",
+                "email": "ventas@fertinacionales.com"
+            },
+            "precio_costo": 2500,
+            "cantidad": 400.0,
+            "stock_minimo": 100
+        },
+        {
+            "codigo": "FERT003",
+            "nombre": "Fertilizante Orgánico Compost",
+            "unidad_medida": "bulto",
+            "fecha_ingreso": "10/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV001",
+                "nombre": "AgroInsumos del Valle",
+                "telefono": "3001234567",
+                "email": "contacto@agroinsumos.com"
+            },
+            "precio_costo": 35000,
+            "cantidad": 50,
+            "stock_minimo": 20
+        },
+        {
+            "codigo": "FERT004",
+            "nombre": "Abono Triple 15",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "12/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV002",
+                "nombre": "Fertilizantes Nacionales S.A.",
+                "telefono": "3009876543",
+                "email": "ventas@fertinacionales.com"
+            },
+            "precio_costo": 2200,
+            "cantidad": 300,
+            "stock_minimo": 80
+        },
+        {
+            "codigo": "SEM001",
+            "nombre": "Semilla de Maíz Híbrido",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "02/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV003",
+                "nombre": "Semillas El Campesino",
+                "telefono": "3005556677",
+                "email": "info@semillascampesino.com"
+            },
+            "precio_costo": 45000,
+            "cantidad": 120,
+            "stock_minimo": 30
+        },
+        {
+            "codigo": "SEM002",
+            "nombre": "Semilla de Frijol",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "03/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV003",
+                "nombre": "Semillas El Campesino",
+                "telefono": "3005556677",
+                "email": "info@semillascampesino.com"
+            },
+            "precio_costo": 12000,
+            "cantidad": 80,
+            "stock_minimo": 25
+        },
+        {
+            "codigo": "SEM003",
+            "nombre": "Semilla de Arveja",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "08/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV003",
+                "nombre": "Semillas El Campesino",
+                "telefono": "3005556677",
+                "email": "info@semillascampesino.com"
+            },
+            "precio_costo": 15000,
+            "cantidad": 60,
+            "stock_minimo": 20
+        },
+        {
+            "codigo": "SEM004",
+            "nombre": "Semilla de Tomate Cherry",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "11/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV003",
+                "nombre": "Semillas El Campesino",
+                "telefono": "3005556677",
+                "email": "info@semillascampesino.com"
+            },
+            "precio_costo": 180000,
+            "cantidad": 15,
+            "stock_minimo": 10
+        },
+        {
+            "codigo": "PLAG001",
+            "nombre": "Herbicida Glifosato",
+            "unidad_medida": "litro",
+            "fecha_ingreso": "04/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV005",
+                "nombre": "Químicos y Plaguicidas del Sur",
+                "telefono": "3004445566",
+                "email": "atencion@quimisur.com"
+            },
+            "precio_costo": 25000,
+            "cantidad": 200,
+            "stock_minimo": 50
+        },
+        {
+            "codigo": "PLAG002",
+            "nombre": "Insecticida Cipermetrina",
+            "unidad_medida": "litro",
+            "fecha_ingreso": "06/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV005",
+                "nombre": "Químicos y Plaguicidas del Sur",
+                "telefono": "3004445566",
+                "email": "atencion@quimisur.com"
+            },
+            "precio_costo": 32000,
+            "cantidad": 150,
+            "stock_minimo": 40
+        },
+        {
+            "codigo": "PLAG003",
+            "nombre": "Fungicida Mancozeb",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "09/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV005",
+                "nombre": "Químicos y Plaguicidas del Sur",
+                "telefono": "3004445566",
+                "email": "atencion@quimisur.com"
+            },
+            "precio_costo": 18000,
+            "cantidad": 90,
+            "stock_minimo": 30
+        },
+        {
+            "codigo": "PLAG004",
+            "nombre": "Acaricida Abamectina",
+            "unidad_medida": "litro",
+            "fecha_ingreso": "13/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV005",
+                "nombre": "Químicos y Plaguicidas del Sur",
+                "telefono": "3004445566",
+                "email": "atencion@quimisur.com"
+            },
+            "precio_costo": 55000,
+            "cantidad": 8,
+            "stock_minimo": 15
+        },
+        {
+            "codigo": "HERR001",
+            "nombre": "Azadón con Mango",
+            "unidad_medida": "unidad",
+            "fecha_ingreso": "07/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV004",
+                "nombre": "Herramientas Agrícolas Ltda",
+                "telefono": "3007778899",
+                "email": "pedidos@herragricolas.com"
+            },
+            "precio_costo": 35000,
+            "cantidad": 45,
+            "stock_minimo": 20
+        },
+        {
+            "codigo": "HERR002",
+            "nombre": "Pala Redonda",
+            "unidad_medida": "unidad",
+            "fecha_ingreso": "07/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV004",
+                "nombre": "Herramientas Agrícolas Ltda",
+                "telefono": "3007778899",
+                "email": "pedidos@herragricolas.com"
+            },
+            "precio_costo": 28000,
+            "cantidad": 38,
+            "stock_minimo": 15
+        },
+        {
+            "codigo": "HERR003",
+            "nombre": "Rastrillo Metálico",
+            "unidad_medida": "unidad",
+            "fecha_ingreso": "10/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV004",
+                "nombre": "Herramientas Agrícolas Ltda",
+                "telefono": "3007778899",
+                "email": "pedidos@herragricolas.com"
+            },
+            "precio_costo": 22000,
+            "cantidad": 30,
+            "stock_minimo": 10
+        },
+        {
+            "codigo": "HERR004",
+            "nombre": "Carretilla 60L",
+            "unidad_medida": "unidad",
+            "fecha_ingreso": "12/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV004",
+                "nombre": "Herramientas Agrícolas Ltda",
+                "telefono": "3007778899",
+                "email": "pedidos@herragricolas.com"
+            },
+            "precio_costo": 85000,
+            "cantidad": 12,
+            "stock_minimo": 8
+        },
+        {
+            "codigo": "INS001",
+            "nombre": "Cal Agrícola",
+            "unidad_medida": "bulto",
+            "fecha_ingreso": "03/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV001",
+                "nombre": "AgroInsumos del Valle",
+                "telefono": "3001234567",
+                "email": "contacto@agroinsumos.com"
+            },
+            "precio_costo": 18000,
+            "cantidad": 200,
+            "stock_minimo": 50
+        },
+        {
+            "codigo": "INS002",
+            "nombre": "Tierra Abonada",
+            "unidad_medida": "m3",
+            "fecha_ingreso": "05/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV001",
+                "nombre": "AgroInsumos del Valle",
+                "telefono": "3001234567",
+                "email": "contacto@agroinsumos.com"
+            },
+            "precio_costo": 45000,
+            "cantidad": 25,
+            "stock_minimo": 10
+        },
+        {
+            "codigo": "INS003",
+            "nombre": "Manguera de Riego 1/2 pulgada",
+            "unidad_medida": "unidad",
+            "fecha_ingreso": "08/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV004",
+                "nombre": "Herramientas Agrícolas Ltda",
+                "telefono": "3007778899",
+                "email": "pedidos@herragricolas.com"
+            },
+            "precio_costo": 35000,
+            "cantidad": 40,
+            "stock_minimo": 15
+        },
+        {
+            "codigo": "INS004",
+            "nombre": "Aspersor Rotativo",
+            "unidad_medida": "unidad",
+            "fecha_ingreso": "11/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV004",
+                "nombre": "Herramientas Agrícolas Ltda",
+                "telefono": "3007778899",
+                "email": "pedidos@herragricolas.com"
+            },
+            "precio_costo": 28000,
+            "cantidad": 5,
+            "stock_minimo": 10
+        },
+        {
+            "codigo": "CRIT001",
+            "nombre": "Abono Foliar Premium",
+            "unidad_medida": "litro",
+            "fecha_ingreso": "13/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV001",
+                "nombre": "AgroInsumos del Valle",
+                "telefono": "3001234567",
+                "email": "contacto@agroinsumos.com"
+            },
+            "precio_costo": 42000,
+            "cantidad": 3,
+            "stock_minimo": 15
+        },
+        {
+            "codigo": "CRIT002",
+            "nombre": "Semilla Cebolla Junca",
+            "unidad_medida": "kg",
+            "fecha_ingreso": "13/10/2025",
+            "proveedor": {
+                "id_proveedor": "PROV003",
+                "nombre": "Semillas El Campesino",
+                "telefono": "3005556677",
+                "email": "info@semillascampesino.com"
+            },
+            "precio_costo": 95000,
+            "cantidad": 2,
+            "stock_minimo": 10
+        }
+    ],
+    "proveedores": [
+        {
+            "id_proveedor": "PROV001",
+            "nombre": "AgroInsumos del Valle",
+            "telefono": "3001234567",
+            "email": "contacto@agroinsumos.com"
+        },
+        {
+            "id_proveedor": "PROV002",
+            "nombre": "Fertilizantes Nacionales S.A.",
+            "telefono": "3009876543",
+            "email": "ventas@fertinacionales.com"
+        },
+        {
+            "id_proveedor": "PROV003",
+            "nombre": "Semillas El Campesino",
+            "telefono": "3005556677",
+            "email": "info@semillascampesino.com"
+        },
+        {
+            "id_proveedor": "PROV004",
+            "nombre": "Herramientas Agrícolas Ltda",
+            "telefono": "3007778899",
+            "email": "pedidos@herragricolas.com"
+        },
+        {
+            "id_proveedor": "PROV005",
+            "nombre": "Químicos y Plaguicidas del Sur",
+            "telefono": "3004445566",
+            "email": "atencion@quimisur.com"
+        }
+    ]
+}

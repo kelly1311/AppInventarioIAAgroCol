@@ -1,0 +1,140 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║            GUÍA DE INSTALACIÓN DE PYTHON PARA WINDOWS                      ║
+║              Sistema de Gestión de Inventario - AgroCol SAS                ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+PASO 1: DESCARGAR PYTHON
+=========================
+
+1. Ve a la página oficial de Python:
+   https://www.python.org/downloads/
+
+2. Descarga Python 3.11 o superior (versión recomendada)
+   - Haz clic en el botón "Download Python 3.x.x"
+   - Se descargará el instalador para Windows
+
+
+PASO 2: INSTALAR PYTHON
+========================
+
+1. Ejecuta el archivo descargado (python-3.x.x-amd64.exe)
+
+2. ⚠️ IMPORTANTE: Antes de hacer clic en "Install Now"
+   ☑ Marca la casilla "Add Python to PATH"
+   ☑ Marca la casilla "Install launcher for all users"
+
+3. Haz clic en "Install Now"
+
+4. Espera a que termine la instalación
+
+5. Cuando aparezca "Setup was successful", haz clic en "Close"
+
+
+PASO 3: VERIFICAR LA INSTALACIÓN
+=================================
+
+1. Abre una nueva ventana de PowerShell o CMD
+   - Presiona Windows + R
+   - Escribe: cmd
+   - Presiona Enter
+
+2. Verifica la versión de Python:
+   python --version
+
+   Deberías ver algo como:
+   Python 3.11.x
+
+3. Verifica pip (gestor de paquetes):
+   pip --version
+
+   Deberías ver algo como:
+   pip 23.x.x from ...
+
+
+PASO 4: EJECUTAR LA APLICACIÓN
+===============================
+
+1. Abre PowerShell o CMD
+
+2. Navega al directorio del proyecto:
+   cd "C:\Users\KELLY\OneDrive - Tecnologico de Antioquia Institucion Universitaria\Documentos\Tecnologico\POO"
+
+3. OPCIÓN A: Crear datos de ejemplo (recomendado para primera vez)
+   python ejemplo_datos.py
+
+4. OPCIÓN B: Iniciar la aplicación
+   python main.py
+
+
+SOLUCIÓN DE PROBLEMAS
+======================
+
+PROBLEMA 1: "Python no se reconoce como comando"
+SOLUCIÓN:
+  - Cierra y vuelve a abrir la terminal después de instalar
+  - Verifica que marcaste "Add Python to PATH" durante instalación
+  - Si no lo hiciste, desinstala Python y reinstala marcando la opción
+
+PROBLEMA 2: Error de permisos
+SOLUCIÓN:
+  - Ejecuta la terminal como Administrador
+  - Clic derecho en CMD/PowerShell → "Ejecutar como administrador"
+
+PROBLEMA 3: Error con tkinter
+SOLUCIÓN:
+  - tkinter viene incluido con Python para Windows
+  - Si falta, reinstala Python marcando "tcl/tk and IDLE"
+
+
+VERIFICACIÓN FINAL
+==================
+
+Para confirmar que todo está listo:
+
+1. Abre terminal en el directorio del proyecto
+
+2. Ejecuta:
+   python -c "import tkinter; print('tkinter OK')"
+
+   Si ves "tkinter OK", todo está listo!
+
+3. Ejecuta:
+   python -c "import json; print('json OK')"
+
+   Si ves "json OK", perfecto!
+
+
+COMANDOS RÁPIDOS
+================
+
+# Ver archivos del proyecto
+dir
+
+# Crear datos de ejemplo
+python ejemplo_datos.py
+
+# Iniciar aplicación
+python main.py
+
+# Ver ayuda
+python main.py --help
+
+
+RECURSOS ADICIONALES
+====================
+
+Documentación oficial de Python:
+https://docs.python.org/es/3/
+
+Tutorial de Python en español:
+https://docs.python.org/es/3/tutorial/
+
+Guía de instalación oficial:
+https://docs.python.org/es/3/using/windows.html
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  Una vez instalado Python, ejecuta "python main.py" para iniciar          ║
+║  la aplicación de gestión de inventario de AgroCol SAS                     ║
+╚════════════════════════════════════════════════════════════════════════════╝

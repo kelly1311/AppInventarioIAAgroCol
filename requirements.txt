@@ -1,0 +1,14 @@
+# Sistema de Gestión de Inventario - AgroCol SAS
+# Requisitos del sistema
+
+# Python 3.7 o superior requerido
+
+# Nota: Este proyecto utiliza únicamente librerías estándar de Python
+# No se requieren instalaciones adicionales via pip
+
+# Librerías utilizadas (incluidas en Python):
+# - tkinter (interfaz gráfica)
+# - json (persistencia de datos)
+# - datetime (manejo de fechas)
+# - typing (anotaciones de tipo)
+# - os (operaciones del sistema de archivos)
