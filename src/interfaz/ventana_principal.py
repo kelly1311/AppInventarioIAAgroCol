@@ -503,7 +503,7 @@ class VentanaPrincipal:
         lo que indica que queremos crear un producto nuevo.
         """
         # Importar aquí para evitar importación circular
-        from ventana_producto import VentanaProducto
+        from .ventana_producto import VentanaProducto
 
         # Crear ventana de producto (None = nuevo producto)
         VentanaProducto(self.root, self, None)
@@ -517,7 +517,7 @@ class VentanaPrincipal:
         en la tabla para poder modificarlo.
         """
         # Importar aquí para evitar importación circular
-        from ventana_producto import VentanaProducto
+        from .ventana_producto import VentanaProducto
 
         # Obtener el elemento seleccionado en la tabla
         seleccion = self.tabla_productos.selection()
@@ -659,7 +659,7 @@ class VentanaPrincipal:
         Crea una nueva ventana donde se pueden ver, agregar y eliminar proveedores.
         """
         # Importar aquí para evitar importación circular
-        from ventana_proveedor import VentanaProveedores
+        from .ventana_proveedor import VentanaProveedores
 
         VentanaProveedores(self.root, self)
 
